@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import PropTypes from "prop-types";
-import { CART } from "../constants";
+import { CART, FAVOURITE } from "../constants";
 import products from "../components/data/products";
 
 export const ProductContext = createContext();
@@ -8,6 +8,9 @@ export const ProductContext = createContext();
 const ProductContextProvider = ({ children }) => {
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem(CART)) || []
+  );
+  const [favourite, setFavourite] = useState(
+    JSON.parse(localStorage.getItem(FAVOURITE)) || []
   );
 
   const controlQuantity = (id, sign) => {
@@ -36,6 +39,22 @@ const ProductContextProvider = ({ children }) => {
     localStorage.setItem(CART, JSON.stringify(newCart));
   };
 
+  const addToFavourite = (id) => {
+    let product = products.find((pr) => pr.id === id);
+    let productInFavourite = favourite.find((pr) => pr.id === id);
+
+    let newFavourite;
+
+    if (productInFavourite) {
+      newFavourite = controlQuantity(id, "+");
+    } else {
+      product.quantity = 1;
+      newFavourite = [...favourite, product];
+    }
+    setFavourite(newFavourite);
+    localStorage.setItem(FAVOURITE, JSON.stringify(newFavourite));
+  };
+
   const increaseQuantity = (id) => {
     const newCart = controlQuantity(id, "+");
     setCart(newCart);
@@ -61,8 +80,10 @@ const ProductContextProvider = ({ children }) => {
 
   const state = {
     cart,
+    favourite,
     totalPriceOfCart,
     addToCart,
+    addToFavourite,
     increaseQuantity,
     decreaseQuantity,
   };

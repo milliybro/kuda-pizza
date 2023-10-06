@@ -14,7 +14,7 @@ import categories from "../data/category";
 
 const Header = () => {
   const { langType, lang, changeLang } = useContext(LanguageContext);
-  const { totalPriceOfCart } = useContext(ProductContext);
+  const { totalPriceOfCart, favourite } = useContext(ProductContext);
 
   // scroll
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -108,7 +108,7 @@ const Header = () => {
             </div>
             <div className="d-flex justify-content-between align-items-center gap-3">
               <NavLink to="/favourite" className="cart">
-                <img height={25} src={fullHeart} alt="" />0
+                <img height={25} src={fullHeart} alt="" />{favourite.length}
               </NavLink>
               <NavLink to="/cart" className="cart">
                 <img src={carta} alt="" />
