@@ -1,0 +1,36 @@
+.cart-left h3 {
+   color: var(--Black, #191919);
+
+   /* Desktop/H4 */
+   font-family: Inter;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 28px;
+   /* 140% */
+}
+
+.cart-left h4 {
+   color: var(--Black, #191919);
+
+   /* Desktop/Normal */
+   font-family: SF Pro Text;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 22px;
+   /* 137.5% */
+}
+
+.cart-price {
+   color: var(--Primary, #FF7010);
+   text-align: right;
+
+   /* Desktop/H4 */
+   font-family: Inter;
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 28px;
+   /* 140% */
+}

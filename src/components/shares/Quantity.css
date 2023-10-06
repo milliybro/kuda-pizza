@@ -1,0 +1,5 @@
+.minus, .plus, .quantity {
+   background: var(--Light-primary, #FFEEE2) !important;
+   color: #FF7010 !important;
+   border: none !important;
+}
