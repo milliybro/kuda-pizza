@@ -5,6 +5,12 @@ footer {
 .footer {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
+   @media (max-width:780px){
+      grid-template-columns: repeat(2,1fr);
+   }
+   @media (max-width:500px){
+      grid-template-columns: repeat(1,1fr);
+   }
 }
 
 .logo {

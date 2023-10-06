@@ -84,3 +84,14 @@
    padding: 13px 32px;
    border: none
 }
+.fwrap{
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.carts{
+   flex-wrap: wrap;
+   @media (max-width:1200px){
+      justify-content: center;
+   }
+}

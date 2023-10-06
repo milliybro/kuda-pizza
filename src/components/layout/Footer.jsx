@@ -1,7 +1,7 @@
 import { Fragment, useContext } from "react";
 import { LanguageContext } from "../../context/LanguageContext";
 
-import "./Footer.css";
+import "./Footer.scss";
 
 import logo from "../../assets/navbar/logo.png";
 

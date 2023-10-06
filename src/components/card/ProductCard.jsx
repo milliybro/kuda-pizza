@@ -13,7 +13,7 @@ const ProductCard = ({ id, image, name, filter, description, price }) => {
   let productInCart = cart.find((pr) => pr.id === id);
   return (
     <div className="card product">
-      <LazyLoadImage effect="blur" src={image} alt={name} />
+      <LazyLoadImage className="w-100" effect="blur" src={image} alt={name} />
       <h6 className="filter">
         {filter ? <h6 className="filtera">{filter}</h6> : ""}
       </h6>

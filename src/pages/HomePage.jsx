@@ -16,7 +16,7 @@ const HomePage = () => {
     <Fragment>
       <section>
         <div className="container">
-          <div className="d-flex justify-content-between align-items-center">
+          <div className="d-flex justify-content-between align-items-center fwrap">
             {categories.map((category, i) => (
               <Fragment key={i}>
                 <div className="categories">
@@ -26,8 +26,8 @@ const HomePage = () => {
               </Fragment>
             ))}
           </div>
-          <div className="d-flex justify-content-between">
-            <DeliverPizzaSet />
+          <div className="carts d-flex justify-content-between">
+            <DeliverPizzaSet className="mb-3" />
             <DeliverPizza />
             <DeliverPizzaSet />
             <DeliverPizza />
